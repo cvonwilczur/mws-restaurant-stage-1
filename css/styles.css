@@ -239,11 +239,6 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  /* width: 50%; */
-}
-#reviews-container {
-  padding: 30px 40px 80px;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -354,5 +349,8 @@ nav h1 a {
 
 .restaurant-info-container section {
 	width: 100%;
+	display: flex;
+	flex-flow: column wrap;
 	justify-content: center;
+	align-items: center;
 }
