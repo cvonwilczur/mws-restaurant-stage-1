@@ -273,3 +273,46 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+
+/* ====================== Flexbox ====================== */
+.index-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.index-container header {
+	width: 100%;
+}
+
+.index-container #maincontent {
+	width: 100%;
+}
+
+.index-container footer {
+	width: 100%;
+}
+
+.index-main-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.index-main-container section {
+	width: 100%;
+}
+
+.filter-options {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.filter-options select {
+	width: 160px;
+}
+
+#restaurants-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
