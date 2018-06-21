@@ -37,7 +37,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
 }
 #footer {
   background-color: #444;
@@ -143,9 +142,12 @@ nav h1 a {
   font-family: Arial,sans-serif;
   margin: 15px;
   min-height: 380px;
-  padding: 0 30px 25px;
-  text-align: left;
+  padding: 20px 20px;
+  text-align: center;
   width: 270px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -175,7 +177,7 @@ nav h1 a {
   color: #fff;
   display: inline-block;
   font-size: 10pt;
-  margin: 15px 0 0;
+  margin: 15px auto;
   padding: 8px 30px 10px;
   text-align: center;
   text-decoration: none;
@@ -205,7 +207,6 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
 }
 #restaurant-name {
   color: #f18200;
@@ -250,6 +251,9 @@ nav h1 a {
 #reviews-list {
   margin: 0;
   padding: 0;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
 }
 #reviews-list li {
   background-color: #fff;
@@ -258,9 +262,9 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
   position: relative;
   width: 85%;
+	padding: 2%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
@@ -272,6 +276,7 @@ nav h1 a {
 /* ====================== Flexbox ====================== */
 
 /* ----- index.html flex ----- */
+
 .index-container {
 	display: flex;
 	flex-direction: column;
@@ -314,17 +319,13 @@ nav h1 a {
 	justify-content: space-evenly;
 }
 
-/* ----- restaurant.html ----- */
+/* ----- restaurant.html flex ----- */
 .restaurant-container {
 	display: flex;
 	flex-flow: column wrap;
 }
 
 .restaurant-container header {
-	width: 100%;
-}
-
-.restaurant-container main {
 	width: 100%;
 }
 
@@ -335,6 +336,7 @@ nav h1 a {
 .maincontent-container {
 	display: flex;
 	flex-flow: row wrap;
+	width: 100%;
 }
 
 .maincontent-container #map-container {
@@ -353,4 +355,70 @@ nav h1 a {
 	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
+}
+
+/* ===== Breakpoints for Mediaqueries ===== */
+
+@media screen and (max-width: 480px) {
+	.restaurant-container, .index-container {
+		max-width: 480px;
+		width: 100%;
+		flex-direction: column;
+	}
+	#breadcrumb {
+		width: 100%;
+		padding: 1% 0 1% 1%;
+	}
+	.maincontent-container {
+		flex-flow: column nowrap;
+	}
+	.maincontent-container #map-container {
+
+	}
+	.maincontent-container .restaurant-info-container {
+		width: 100%;
+		order: 2;
+	}
+	.inside header {
+	  position: static;
+	}
+	.inside #map-container {
+	  background: blue none repeat scroll 0 0;
+	  position: static;
+		order: 1;
+		width: 100%;
+		height: 45vh;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 599px) {
+	.restaurant-container, .index-container {
+		max-width: 599px;
+		width: 100%;
+		flex-direction: column;
+	}
+	#breadcrumb {
+		width: 100%;
+		padding: 1% 0 1% 1%;
+	}
+	.maincontent-container {
+		flex-flow: column nowrap;
+	}
+	.maincontent-container #map-container {
+
+	}
+	.maincontent-container .restaurant-info-container {
+		width: 100%;
+		order: 2;
+	}
+	.inside header {
+	  position: static;
+	}
+	.inside #map-container {
+	  background: blue none repeat scroll 0 0;
+	  position: static;
+		order: 1;
+		width: 100%;
+		height: 45vh;
+	}
 }
