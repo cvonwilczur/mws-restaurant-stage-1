@@ -18,16 +18,16 @@
     </header>
 
     <main id="maincontent" class="index-main-container">
-      <section id="map-container">
+      <section id="map-container" role="widget" aria-hidden="true" aria-label="Google Maps">
         <div id="map"></div>
       </section>
       <section>
         <div class="filter-options">
           <h2>Filter Results</h2>
-          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <select id="neighborhoods-select" name="neighborhoods" aria-label="Select the Neighborhood" onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
           </select>
-          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <select id="cuisines-select" name="cuisines" aria-label="Select the Cuisine" onchange="updateRestaurants()">
             <option value="all">All Cuisines</option>
         </select>
         </div>
