@@ -37,14 +37,13 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
 }
 #footer {
   background-color: #444;
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
-  padding: 25px;
+  padding: 2%;
   text-align: center;
   text-transform: uppercase;
 }
@@ -143,9 +142,12 @@ nav h1 a {
   font-family: Arial,sans-serif;
   margin: 15px;
   min-height: 380px;
-  padding: 0 30px 25px;
-  text-align: left;
+  padding: 20px 20px;
+  text-align: center;
   width: 270px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -175,7 +177,7 @@ nav h1 a {
   color: #fff;
   display: inline-block;
   font-size: 10pt;
-  margin: 15px 0 0;
+  margin: 15px auto;
   padding: 8px 30px 10px;
   text-align: center;
   text-decoration: none;
@@ -205,7 +207,6 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
 }
 #restaurant-name {
   color: #f18200;
@@ -239,11 +240,6 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
-}
-#reviews-container {
-  padding: 30px 40px 80px;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -255,6 +251,9 @@ nav h1 a {
 #reviews-list {
   margin: 0;
   padding: 0;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
 }
 #reviews-list li {
   background-color: #fff;
@@ -263,13 +262,169 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
   position: relative;
   width: 85%;
+	padding: 2%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* ====================== Flexbox ====================== */
+
+/* ----- index.html flex ----- */
+
+.index-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.index-container header {
+	width: 100%;
+}
+
+.index-container #maincontent {
+	width: 100%;
+}
+
+.index-container footer {
+	width: 100%;
+}
+
+.index-main-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.index-main-container section {
+	width: 100%;
+}
+
+.filter-options {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.filter-options select {
+	width: 160px;
+}
+
+#restaurants-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+
+/* ----- restaurant.html flex ----- */
+.restaurant-container {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.restaurant-container header {
+	width: 100%;
+}
+
+.restaurant-container footer {
+	width: 100%;
+}
+
+.maincontent-container {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+.maincontent-container #map-container {
+	width: 50%;
+}
+
+.maincontent-container .restaurant-info-container {
+	width: 50%;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.restaurant-info-container section {
+	width: 100%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ===== Breakpoints for Mediaqueries ===== */
+
+@media screen and (max-width: 480px) {
+	.restaurant-container, .index-container {
+		max-width: 480px;
+		width: 100%;
+		flex-direction: column;
+	}
+	#breadcrumb {
+		width: 100%;
+		padding: 1% 0 1% 1%;
+	}
+	.maincontent-container {
+		flex-flow: column nowrap;
+	}
+	.maincontent-container #map-container {
+
+	}
+	.maincontent-container .restaurant-info-container {
+		width: 100%;
+		order: 2;
+	}
+	.inside header {
+	  position: static;
+	}
+	.inside #map-container {
+	  background: blue none repeat scroll 0 0;
+	  position: static;
+		order: 1;
+		width: 100%;
+		height: 45vh;
+	}
+	#footer {
+		font-size: 6pt;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 599px) {
+	.restaurant-container, .index-container {
+		max-width: 599px;
+		width: 100%;
+		flex-direction: column;
+	}
+	#breadcrumb {
+		width: 100%;
+		padding: 1% 0 1% 1%;
+	}
+	.maincontent-container {
+		flex-flow: column nowrap;
+	}
+	.maincontent-container #map-container {
+
+	}
+	.maincontent-container .restaurant-info-container {
+		width: 100%;
+		order: 2;
+	}
+	.inside header {
+	  position: static;
+	}
+	.inside #map-container {
+	  background: blue none repeat scroll 0 0;
+	  position: static;
+		order: 1;
+		width: 100%;
+		height: 45vh;
+	}
+	#footer {
+		font-size: 6pt;
+	}
 }
